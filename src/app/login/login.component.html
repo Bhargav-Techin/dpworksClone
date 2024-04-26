@@ -1,0 +1,61 @@
+<div class="login-container" ng-app>
+  <form class="login-form" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+    <div class="Welcome">Welcome</div>
+    <div class="paragraph">Sign in to the portal!</div>
+    <div class="login-form-input">
+      <div>
+        <input
+          type="email"
+          placeholder="Email Address"
+          required
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          ngModel
+          name="email"
+          #email="ngModel"
+        />
+        <div
+          *ngIf="email.invalid && (email.dirty || email.touched)"
+          class="error"
+        >
+          Please provide a valid email address.
+        </div>
+      </div>
+      <div>
+        <input
+          type="password"
+          placeholder="Password"
+          required
+          ngModel
+          name="password"
+          #password="ngModel"
+        />
+        <div
+          *ngIf="password.invalid && (password.dirty || password.touched)"
+          class="error"
+        >
+          Provide a valid password.
+        </div>
+        <button
+          type="submit"
+          [disabled]="!loginForm.valid"
+          [ngStyle]="{
+            'background-color': loginForm.valid ? '#673AB7' : '#E0E0E0',
+            color: loginForm.valid ? 'white' : 'gray'
+          }"
+        >
+          Sign In
+        </button>
+      </div>
+    </div>
+    <div class="container">
+      <a href="#" class="anchor">Forgot password?</a>
+      <div class="anchor">New User?<a routerLink="/register">Sign Up</a></div>
+    </div>
+  </form>
+  <div class="privacy-policy">Privacy Policy</div>
+  <div class="footer">
+    © 2021 All rights reserved. <a href="#"> Satsang Org</a>
+  </div>
+</div>
+
+<div *ngIf="errorMessage" class="errorMsg">{{ errorMessage }}</div>

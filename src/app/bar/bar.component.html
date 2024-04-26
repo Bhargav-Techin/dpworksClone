@@ -1,0 +1,77 @@
+<div class="nav-bar">
+  <div class="left-part">
+    <img
+      src="../../assets/bar.png"
+      alt=""
+      class="barLogo"
+      (click)="toggleSidebar()"
+    />
+    <div class="routeText">Statistic</div>
+  </div>
+  <div class="left-part">
+    <img src="../../assets/heart.png" alt="" class="heartLogo" />
+    <img src="../../assets/bell.png" alt="" class="bellLogo" />
+  </div>
+</div>
+<div class="side-bar" *ngIf="showSidebar">
+  <div class="bar">
+    <div class="top-section">
+      <div class="arwbg">
+        <img
+          src="../../assets/arw.png"
+          alt=""
+          class="arwLogo"
+          (click)="toggleSidebar()"
+        />
+      </div>
+      <img src="../../assets/profile.png" alt="" class="userLogo" />
+      <div class="userName">{{ username | uppercase }}</div>
+      <div class="roll">FIELD WORKER</div>
+    </div>
+    <div class="line"></div>
+    <div class="middle-section">
+      <div class="mid-text">
+        <img src="../../assets/stat.png" alt="" class="mid-logo" />Statistics
+      </div>
+      <div class="mid-text">
+        <img src="../../assets/dat.png" alt="" class="mid-logo" />Datum
+      </div>
+      <div class="mid-text">
+        <img src="../../assets/dp.png" alt="" class="mid-logo" />DP 2.0
+      </div>
+      <div class="mid-text">
+        <img src="../../assets/up.png" alt="" class="mid-logo" />Update
+      </div>
+      <div class="mid-text">
+        <img src="../../assets/sq.png" alt="" class="mid-logo" />Master Search
+      </div>
+      <div class="mid-text">
+        <img src="../../assets/str.png" alt="" class="mid-logo" />DPNF
+      </div>
+      <div class="mid-text">
+        <img src="../../assets/defltr.png" alt="" class="mid-logo" />Defaulter
+        List
+      </div>
+      <div class="mid-text">
+        <img
+          src="../../assets/notif.png"
+          alt=""
+          class="mid-logo"
+        />Notifications
+      </div>
+      <div class="mid-text">
+        <img src="../../assets/bar.png" alt="" class="mid-logo" />Rejections
+      </div>
+      <div class="mid-text">
+        <img src="../../assets/usr.png" alt="" class="mid-logo" />Profile
+        Settings
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="bottom-section">
+      <div class="mid-text" (click)="logout()">
+        <img src="../../assets/logout.png" alt="" class="mid-logo" />Logout
+      </div>
+    </div>
+  </div>
+</div>
